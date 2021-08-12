@@ -20,6 +20,18 @@ public class Carrito {
         this.cliente = cliente;
     }
 
-    //TODO
-    // Los metodos faltan
+    public Double totalCompra(){
+        return productos.stream().mapToDouble(Producto::calcularPrecio).sum();
+    }
+
+    public void compraExitosa(){
+        Double precioFinal = this.totalCompra();
+        cliente.getTarjetaDeDebito().getEstado().comprar(precioFinal);
+        if(precioFinal>cliente.getTarjetaDeDebito().getSaldo()){
+            //ToDo
+          //  cliente.getFormaDeNotificacion("Compra exitosa");
+        }else{
+          //  cliente.getFormaDeNotificacion("Compra rechazada");
+        }
+    }
 }

@@ -6,8 +6,8 @@ public class Rojo implements Estado {
         if(saldoActual<15000 && saldoActual>0){
             tarjetaDebito.setSaldo(saldoActual);
         }else{
-            tarjetaDebito.setSaldo(saldoActual);
             tarjetaDebito.setEstado(new Inhabilitada());
+            System.out.println("Error: Saldo insuficiente");
         }
     }
 }

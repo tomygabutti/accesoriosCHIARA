@@ -1,5 +1,3 @@
-import Estados.Estado;
-
 import java.util.Date;
 
 public class TarjetaDebito {
@@ -10,7 +8,6 @@ public class TarjetaDebito {
     private Date fechaVencimiento;
     private double saldo;
     private Estado estado;
-
 
     public String getBanco() {
         return banco;
@@ -58,5 +55,17 @@ public class TarjetaDebito {
 
     public void setSaldo(double saldo) {
         this.saldo = saldo;
+    }
+
+    public Estado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    }
+
+    public void testing(){
+
     }
 }

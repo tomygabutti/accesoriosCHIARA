@@ -11,7 +11,7 @@ public class Verde implements Estado {
                 tarjetaDebito.setSaldo(saldoActual);
             } else {
                 tarjetaDebito.setEstado(new Inhabilitada());
-                tarjetaDebito.setSaldo(saldoActual);
+                System.out.println("Error: Saldo insuficiente");
             }
         }
     }
