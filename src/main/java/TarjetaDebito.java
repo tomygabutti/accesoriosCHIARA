@@ -1,3 +1,5 @@
+import Estados.Estado;
+
 import java.util.Date;
 
 public class TarjetaDebito {
@@ -7,6 +9,7 @@ public class TarjetaDebito {
     private int cvv;
     private Date fechaVencimiento;
     private double saldo;
+    private Estado estado;
 
 
     public String getBanco() {
