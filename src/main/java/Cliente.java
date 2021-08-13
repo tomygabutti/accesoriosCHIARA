@@ -1,7 +1,7 @@
 import Notificaciones.Notificacion;
 
 public class Cliente extends Persona {
-    private
+    private String telefono;
     private Notificacion formaDeNotificacion;
     private TarjetaDebito tarjetaDeDebito;
 
