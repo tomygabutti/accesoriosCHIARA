@@ -24,14 +24,15 @@ public class Carrito {
         return productos.stream().mapToDouble(Producto::calcularPrecio).sum();
     }
 
-    public void compraExitosa(){
+    public void compra(){
         Double precioFinal = this.totalCompra();
-        cliente.getTarjetaDeDebito().getEstado().comprar(precioFinal);
-        if(precioFinal>cliente.getTarjetaDeDebito().getSaldo()){
-            //ToDo
-          //  cliente.getFormaDeNotificacion("Compra exitosa");
+        if(cliente.getTarjetaDeDebito().getEstado().comprar(precioFinal)==1){
+            //enviar Notificacion de compra exitosa TODO
+           // cliente.getFormaDeNotificacion().confirmarCompra(//mensaje);
         }else{
-          //  cliente.getFormaDeNotificacion("Compra rechazada");
+            //enviar Notificacion de compra rechazada
+            //cliente.getFormaDeNotificacion().confirmarCompra(//mensaje);
         }
+
     }
 }

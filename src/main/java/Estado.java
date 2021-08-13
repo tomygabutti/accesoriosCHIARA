@@ -1,3 +1,3 @@
 public interface Estado {
-    public void comprar(double precioCompra);
+    public int comprar(double precioCompra);
 }

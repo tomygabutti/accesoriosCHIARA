@@ -1,9 +1,9 @@
 public class Accesorio extends Producto{
+    private double precioUnitario;
+
     public void setPrecioUnitario(double precioUnitario) {
         this.precioUnitario = precioUnitario;
     }
-
-    private double precioUnitario;
 
     @Override
     public double calcularPrecio() {

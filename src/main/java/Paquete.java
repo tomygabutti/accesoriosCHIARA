@@ -3,6 +3,10 @@ import java.util.List;
 public class Paquete extends Producto{
     private List<Producto> componentes;
 
+    public List<Producto> getComponentes() {
+        return componentes;
+    }
+
     @Override
     public double calcularPrecio() {
         return componentes.stream().mapToDouble(Producto::calcularPrecio).sum();
