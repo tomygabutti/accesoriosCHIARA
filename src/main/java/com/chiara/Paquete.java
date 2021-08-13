@@ -1,3 +1,5 @@
+package com.chiara;
+
 import java.util.List;
 
 public class Paquete extends Producto{

@@ -1,3 +1,7 @@
+package com.chiara.estados;
+
+import com.chiara.TarjetaDebito;
+
 public class Rojo implements Estado {
     private TarjetaDebito tarjetaDebito;
     @Override

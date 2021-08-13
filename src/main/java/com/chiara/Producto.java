@@ -1,3 +1,5 @@
+package com.chiara;
+
 public abstract class Producto {
     private int codigo;
     private String nombre;

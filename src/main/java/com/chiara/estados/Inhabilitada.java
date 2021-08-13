@@ -1,3 +1,5 @@
+package com.chiara.estados;
+
 public class Inhabilitada implements Estado {
     @Override
     public int comprar(double precioCompra) {

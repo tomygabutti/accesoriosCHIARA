@@ -1,6 +1,8 @@
+package com.chiara;
+
 import java.util.Date;
 
-public abstract class Persona {
+public abstract class Usuario {
     private String nombre;
     private String apellido;
     private Date fechaDeNacimiento;

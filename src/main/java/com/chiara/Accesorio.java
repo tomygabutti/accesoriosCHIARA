@@ -1,4 +1,6 @@
-public class Accesorio extends Producto{
+package com.chiara;
+
+public class Accesorio extends Producto {
     private double precioUnitario;
 
     public void setPrecioUnitario(double precioUnitario) {

@@ -1,4 +1,5 @@
-import org.junit.Assert;
+import com.chiara.*;
+
 import org.junit.Before;
 import org.junit.Test;
 

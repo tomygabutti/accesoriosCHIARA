@@ -1,6 +1,8 @@
-import Notificaciones.Notificacion;
+package com.chiara;
 
-public class Cliente extends Persona {
+import com.chiara.notificaciones.Notificacion;
+
+public class Cliente extends Usuario {
     private String telefono;
     private Notificacion formaDeNotificacion;
     private TarjetaDebito tarjetaDeDebito;
