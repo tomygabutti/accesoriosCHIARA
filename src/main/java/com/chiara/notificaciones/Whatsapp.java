@@ -5,7 +5,7 @@ import com.twilio.type.PhoneNumber;
 
 public class Whatsapp extends Notificacion{
     public void comprobanteCompra(String mensaje,String numero){
-        PhoneNumber from = new PhoneNumber("whatsapp:+14242034681");
+        PhoneNumber from = new PhoneNumber("whatsapp:+14155238886");
         PhoneNumber to   = new PhoneNumber("whatsapp:"+numero);
 
         Message message = Message.creator(
