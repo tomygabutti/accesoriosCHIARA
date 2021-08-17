@@ -41,7 +41,7 @@ public class Compra {
     public void compraGeneral(){
         Double precioFinal = this.totalCompra();
         String numeroCliente = cliente.getTelefono();
-        if(cliente.getTarjetaDeDebito().getEstado().comprar(precioFinal,cliente.getTarjetaDeDebito())==1){
+        if((this.cliente.getTarjetaDeDebito().getEstado().comprar(precioFinal,this.cliente.getTarjetaDeDebito()))==1){
             String comprobanteCompra = comprobanteCompra();
             cliente.getFormaDeNotificacion().comprobanteCompra(comprobanteCompra,numeroCliente);
         }else{
