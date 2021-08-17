@@ -1,11 +1,9 @@
 package com.chiara;
 
-import com.chiara.observer.Observable;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class Stock extends Observable {
+public class Stock{
     private static Stock instancia;
     private List<Producto> productos = new ArrayList<>();
 

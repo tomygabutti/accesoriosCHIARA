@@ -5,23 +5,26 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public class CarritoTest {
-    private Carrito carrito;
+public class CompraTest {
+    private Compra compra;
     private Accesorio prodSimple1;
     private Accesorio prodSimple2;
     private Accesorio prodSimple3;
     private Paquete paquete;
     private Paquete paquete2;
+    private List<Producto> productosTest;
 
     @Before
     public void init(){
-        this.carrito = new Carrito();
+        this.compra = new Compra();
         this.prodSimple1 = new Accesorio();
         this.prodSimple2 = new Accesorio();
         this.prodSimple3 = new Accesorio();
         this.paquete = new Paquete();
         this.paquete2 = new Paquete();
+        this.productosTest = new ArrayList<>();
 
         prodSimple1.setPrecioUnitario(40);
         prodSimple2.setPrecioUnitario(30);
@@ -44,8 +47,11 @@ public class CarritoTest {
         listaCarrito.add(paquete);
         listaCarrito.add(paquete2);
 
-        carrito.setProductos(listaCarrito);
+        compra.setProductos(listaCarrito);
 
+        productosTest.add(prodSimple1);
+        productosTest.add(prodSimple2);
+        productosTest.add(prodSimple3);
 
     }
 
@@ -53,7 +59,10 @@ public class CarritoTest {
     public void obtenerPrecioProducto(){
       System.out.println(this.paquete.calcularPrecio());
       System.out.println(this.paquete2.calcularPrecio());
-      System.out.println(this.carrito.totalCompra());
+      System.out.println(this.compra.totalCompra());
+      String productosToString = this.productosTest.stream().map(Object::toString).collect(Collectors.joining(", "));
+      String productosToString2 = this.productosTest.stream().map(producto -> producto.getNombre()+" "+producto.calcularPrecio()).collect(Collectors.joining(", "));
+      System.out.println(productosToString2);
     }
 
 }

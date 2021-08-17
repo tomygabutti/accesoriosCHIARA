@@ -2,7 +2,7 @@ package com.chiara;
 
 import com.chiara.notificaciones.Notificacion;
 
-public class Cliente extends Usuario {
+public class Cliente extends Persona {
     private String telefono;
     private Notificacion formaDeNotificacion;
     private TarjetaDebito tarjetaDeDebito;
@@ -21,5 +21,13 @@ public class Cliente extends Usuario {
 
     public void setTarjetaDeDebito(TarjetaDebito tarjetaDeDebito) {
         this.tarjetaDeDebito = tarjetaDeDebito;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 }
