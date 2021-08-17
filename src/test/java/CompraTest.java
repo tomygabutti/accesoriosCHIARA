@@ -15,6 +15,7 @@ public class CompraTest {
     private Paquete paquete;
     private Paquete paquete2;
     private List<Producto> productosTest;
+    private Double total;
 
     @Before
     public void init(){
@@ -25,6 +26,7 @@ public class CompraTest {
         this.paquete = new Paquete();
         this.paquete2 = new Paquete();
         this.productosTest = new ArrayList<>();
+        this.total = 1.2345e300d;
 
         prodSimple1.setPrecioUnitario(40);
         prodSimple2.setPrecioUnitario(30);
@@ -62,7 +64,8 @@ public class CompraTest {
       System.out.println(this.compra.totalCompra());
       String productosToString = this.productosTest.stream().map(Object::toString).collect(Collectors.joining(", "));
       String productosToString2 = this.productosTest.stream().map(producto -> producto.getNombre()+" "+producto.calcularPrecio()).collect(Collectors.joining(", "));
-      System.out.println(productosToString2);
+      String testing = this.total.toString();
+      System.out.println(testing);
     }
 
 }

@@ -38,10 +38,10 @@ public class Compra {
         return "lista de Productos: "+productosToString+"\n"+"Precio Final: "+totalCompra;
     }
 
-    public void compra(){
+    public void compraGeneral(){
         Double precioFinal = this.totalCompra();
         String numeroCliente = cliente.getTelefono();
-        if(cliente.getTarjetaDeDebito().getEstado().comprar(precioFinal)==1){
+        if(cliente.getTarjetaDeDebito().getEstado().comprar(precioFinal,cliente.getTarjetaDeDebito())==1){
             String comprobanteCompra = comprobanteCompra();
             cliente.getFormaDeNotificacion().comprobanteCompra(comprobanteCompra,numeroCliente);
         }else{
@@ -49,5 +49,21 @@ public class Compra {
             cliente.getFormaDeNotificacion().comprobanteCompra(compraRechazada,numeroCliente);
         }
 
+    }
+
+    public String getCodigoCompra() {
+        return codigoCompra;
+    }
+
+    public void setCodigoCompra(String codigoCompra) {
+        this.codigoCompra = codigoCompra;
+    }
+
+    public Date getFechaCompra() {
+        return fechaCompra;
+    }
+
+    public void setFechaCompra(Date fechaCompra) {
+        this.fechaCompra = fechaCompra;
     }
 }
