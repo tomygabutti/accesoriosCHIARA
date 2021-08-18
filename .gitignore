@@ -161,5 +161,6 @@ dist/
 npm-debug.log
 yarn-error.log
 
+ejercicios-tps.iml
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij,maven,java,vue,vuejs
