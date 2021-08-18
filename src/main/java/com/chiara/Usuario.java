@@ -2,7 +2,9 @@ package com.chiara;
 
 import java.util.Date;
 
-public abstract class Persona {
+public abstract class Usuario {
+    private String nombreUsuario;
+    private String contrasenia;
     private String nombre;
     private String apellido;
     private Date fechaDeNacimiento;
@@ -47,5 +49,21 @@ public abstract class Persona {
 
     public void setNroDocumento(String nroDocumento) {
         this.nroDocumento = nroDocumento;
+    }
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
+
+    public String getContrasenia() {
+        return contrasenia;
+    }
+
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
     }
 }

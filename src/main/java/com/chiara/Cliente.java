@@ -2,7 +2,7 @@ package com.chiara;
 
 import com.chiara.notificaciones.Notificacion;
 
-public class Cliente extends Persona {
+public class Cliente extends Usuario {
     private String telefono;
     private Notificacion formaDeNotificacion;
     private TarjetaDebito tarjetaDeDebito;

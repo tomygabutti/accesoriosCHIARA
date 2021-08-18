@@ -1,6 +1,6 @@
 package com.chiara;
 
-public class DuenioDelNegocio extends Persona {
+public class Administrador extends Usuario {
     private Stock stock;
 
     public Stock getStock() {
