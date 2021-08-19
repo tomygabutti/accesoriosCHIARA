@@ -163,4 +163,7 @@ yarn-error.log
 
 ejercicios-tps.iml
 
+lib
+
+
 # End of https://www.toptal.com/developers/gitignore/api/intellij,maven,java,vue,vuejs

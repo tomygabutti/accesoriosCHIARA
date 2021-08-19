@@ -1,4 +1,5 @@
 package com.chiara;
+import com.chiara.db.*;
 
 public abstract class Producto {
     private int codigo;
@@ -39,5 +40,11 @@ public abstract class Producto {
 
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
+    }
+
+    // Base de Datos
+    public void insert(){
+        ProductoDAO prodDao = new ProductoDAO();
+        prodDao.insert(this.codigo,this.nombre,this.detalle,this.cantidad);
     }
 }
