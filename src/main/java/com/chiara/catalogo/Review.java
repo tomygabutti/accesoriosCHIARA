@@ -4,7 +4,7 @@ import com.chiara.*;
 public class Review {
     private Cliente cliente;
     private String comentario;
-    private String calificacion;
+    private int calificacion;
 
     public Cliente getCliente() {
         return cliente;
@@ -22,11 +22,11 @@ public class Review {
         this.comentario = comentario;
     }
 
-    public String getCalificacion() {
+    public int getCalificacion() {
         return calificacion;
     }
 
-    public void setCalificacion(String calificacion) {
+    public void setCalificacion(int calificacion) {
         this.calificacion = calificacion;
     }
 }

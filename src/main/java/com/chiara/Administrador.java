@@ -1,32 +1,23 @@
 package com.chiara;
 
+import com.chiara.catalogo.Catalogo;
+import com.chiara.catalogo.ProductoCatalogo;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class Administrador extends Usuario {
-    private Stock stock;
-    private Double precioEstadistica;
+    private Catalogo catalogo;
 
-    public Stock getStock() {
-        return stock;
+    public Catalogo getCatalogo() {
+        return catalogo;
     }
 
-    public void setStock(Stock stock) {
-        this.stock = stock;
+    public void setCatalogo(Catalogo catalogo) {
+        this.catalogo = catalogo;
     }
 
-    public Double getPrecioEstadistica() {
-        return precioEstadistica;
-    }
-
-    public void setPrecioEstadistica(Double precioEstadistica) {
-        this.precioEstadistica = precioEstadistica;
-    }
-
-    public List<Producto> productosMayoresA() {
-        return stock.getProductos()
-                .stream()
-                .filter(producto -> producto.calcularPrecio() > this.precioEstadistica)
-                .collect(Collectors.toList());
+    public List<ProductoCatalogo> productosAlMenosUnaEstrella() {
+        return catalogo.getProductos().stream().filter(p -> p.calicacionDeUnaEstrella()==1).collect(Collectors.toList());
     }
 }

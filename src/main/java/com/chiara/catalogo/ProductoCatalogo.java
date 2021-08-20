@@ -2,6 +2,7 @@ package com.chiara.catalogo;
 import com.chiara.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ProductoCatalogo {
     private Producto producto;
@@ -31,5 +32,14 @@ public class ProductoCatalogo {
 
     public void setReviews(List<Review> reviews) {
         this.reviews = reviews;
+    }
+
+    public int calicacionDeUnaEstrella(){
+       if(((reviews.stream().filter(r -> r.getCalificacion() == 1).collect(Collectors.toList())).size())==1){
+            return 1;
+        }else{
+           return 0;
+       }
+
     }
 }
