@@ -17,6 +17,8 @@ public class ProductoDAO {
         }
     }
 
+
+
     public void insert(int idProd,String nombreProd, String detalleProd, int cant) {
         String consulta = "INSERT INTO producto (id_producto, nombre, detalle, cantidad) "
                 +"VALUES ('" + idProd + "', '" + nombreProd + "', '" + detalleProd + "', '" + cant + "')";
@@ -37,52 +39,49 @@ public class ProductoDAO {
 
     }
 
-    public boolean updateActivo(int idPersona) {
-        String consulta = "UPDATE persona SET activo = 0 WHERE id = " + idPersona + ";";
+
+    public boolean delete(int idProducto) {
+        String consulta = "DELETE FROM producto WHERE id_producto = " + idProducto + ";";
 
         try {
 
             this.conn = newConnection();
 
-            // Ejecuci�n
             PreparedStatement stmt = this.conn.prepareStatement(consulta);
 
-            // execute the preparedstatement
-            stmt.executeUpdate();
-            return true;
-
-
-        } catch (SQLException ex) {
-
-            // handle any errors
-            System.out.println("Error en Update");
-            return false;
-        }
-
-    }
-
-    public boolean delete(int idPersona) {
-        String consulta = "DELETE FROM persona WHERE id = " + idPersona + ";";
-
-        try {
-
-            this.conn = newConnection();
-
-            // Ejecuci�n
-            PreparedStatement stmt = this.conn.prepareStatement(consulta);
-
-            // execute the preparedstatement
             stmt.execute();
             return true;
 
         } catch (SQLException ex) {
 
-            // handle any errors
             System.out.println("Error en Delete");
             return false;
         }
 
     }
+/*
+    public void select(){
+        try {
+            this.conn = newConnection();
+            Statement statement = conn.createStatement();
+            ResultSet resultSet = statement.executeQuery("select * from producto");
 
+            while(resultSet.next()){
+                System.out.println(resultSet.getString("id_producto"));
+                System.out.println(resultSet.getString("nombre"));
+                System.out.println(resultSet.getString("detalle"));
+                System.out.println(resultSet.getString("cantidad"));
+            }
+
+        } catch (SQLException ex) {
+
+            System.out.println("Error en SELECT");
+            System.out.println(ex.getErrorCode());
+            System.out.println(ex.getMessage());
+            System.out.println(ex.getCause());
+
+        }
+    }
+*/
 }
 

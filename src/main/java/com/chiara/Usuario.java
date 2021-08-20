@@ -1,13 +1,17 @@
 package com.chiara;
+import com.chiara.db.*;
+import com.chiara.db.ProductoDAO;
+import com.chiara.db.UsuarioDAO;
 
 import java.util.Date;
 
 public abstract class Usuario {
+    private int idUsuario;
     private String nombreUsuario;
     private String contrasenia;
     private String nombre;
     private String apellido;
-    private Date fechaDeNacimiento;
+    private String fechaDeNacimiento;
     private String tipoDocumento;
     private String nroDocumento;
 
@@ -27,11 +31,11 @@ public abstract class Usuario {
         this.apellido = apellido;
     }
 
-    public Date getFechaDeNacimiento() {
+    public String getFechaDeNacimiento() {
         return fechaDeNacimiento;
     }
 
-    public void setFechaDeNacimiento(Date fechaDeNacimiento) {
+    public void setFechaDeNacimiento(String fechaDeNacimiento) {
         this.fechaDeNacimiento = fechaDeNacimiento;
     }
 
@@ -66,4 +70,23 @@ public abstract class Usuario {
     public void setContrasenia(String contrasenia) {
         this.contrasenia = contrasenia;
     }
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    public void insert(){
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        usuarioDAO.insert(this.nombreUsuario,this.contrasenia,this.nombre,this.apellido,this.fechaDeNacimiento,this.tipoDocumento,this.nroDocumento);
+    }
+
+    public void delete(){
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        usuarioDAO.delete(this.idUsuario);
+    }
+
 }

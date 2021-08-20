@@ -47,4 +47,10 @@ public abstract class Producto {
         ProductoDAO prodDao = new ProductoDAO();
         prodDao.insert(this.codigo,this.nombre,this.detalle,this.cantidad);
     }
+
+    public void delete(){
+        ProductoDAO prodDao = new ProductoDAO();
+        prodDao.delete(this.codigo);
+    }
+
 }
