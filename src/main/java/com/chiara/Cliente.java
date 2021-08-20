@@ -31,7 +31,7 @@ public class Cliente extends Usuario {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-
+/*
     //ToDo
     public void insert(){
         ClienteDAO clieDAO = new ClienteDAO();
@@ -42,4 +42,6 @@ public class Cliente extends Usuario {
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         usuarioDAO.delete(this.idUsuario);
     }
+
+ */
 }
