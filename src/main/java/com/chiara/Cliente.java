@@ -1,6 +1,5 @@
 package com.chiara;
 import com.chiara.db.ClienteDAO;
-import com.chiara.db.ProductoDAO;
 import com.chiara.notificaciones.Notificacion;
 
 public class Cliente{

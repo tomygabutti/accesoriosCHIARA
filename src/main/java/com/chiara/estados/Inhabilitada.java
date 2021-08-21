@@ -1,5 +1,4 @@
 package com.chiara.estados;
-
 import com.chiara.TarjetaDebito;
 
 public class Inhabilitada implements Estado {

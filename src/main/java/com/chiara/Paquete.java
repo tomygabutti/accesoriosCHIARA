@@ -1,10 +1,7 @@
 package com.chiara;
-
 import com.chiara.db.AccesorioDAO;
-import com.chiara.db.CompraDAO;
 import com.chiara.db.PaqueteDAO;
 import com.chiara.db.ProductoDAO;
-
 import java.util.List;
 
 public class Paquete extends Producto{
@@ -50,7 +47,7 @@ public class Paquete extends Producto{
         }
     }
 
-    public void deleteConAccesoriosYProducto(){
+    public void deleteConAccesorioYProducto(){
         PaqueteDAO paqueteDAO = new PaqueteDAO();
         ProductoDAO productoDAO = new ProductoDAO();
         AccesorioDAO accesorioDAO = new AccesorioDAO();

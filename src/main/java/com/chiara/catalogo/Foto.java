@@ -9,8 +9,6 @@ public class Foto {
         this.tamanio = tamanioEstandar;
     }
 
-    // Getters Setters
-
     public String getTamanio() { return tamanio; }
 
     public void setTamanio(String tamanio) { this.tamanio = tamanio; }

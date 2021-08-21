@@ -1,7 +1,5 @@
 package com.chiara;
-
 import com.chiara.db.CompraDAO;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -52,7 +50,6 @@ public class Compra {
     public String comprobanteCompra(){
         String productosToString = this.productos.stream().map(producto -> producto.getNombre()+" "+producto.calcularPrecio()).collect(Collectors.joining(", "));;
         String totalCompra = totalCompra().toString();
-
         return "lista de Productos: "+productosToString+"\n"+"Precio Final: "+totalCompra;
     }
 

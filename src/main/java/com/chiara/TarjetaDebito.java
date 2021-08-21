@@ -1,7 +1,5 @@
 package com.chiara;
-
 import com.chiara.estados.Estado;
-
 import java.util.Date;
 
 public class TarjetaDebito {
@@ -69,7 +67,4 @@ public class TarjetaDebito {
         this.estado = estado;
     }
 
-    public void testing(){
-
-    }
 }

@@ -1,7 +1,5 @@
 package com.chiara;
-
 import com.chiara.db.AccesorioDAO;
-import com.chiara.db.AdministradorDAO;
 import com.chiara.db.ProductoDAO;
 
 public class Accesorio extends Producto {

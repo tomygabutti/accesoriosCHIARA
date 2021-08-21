@@ -1,5 +1,4 @@
 package com.chiara.db;
-import com.chiara.*;
 import java.sql.*;
 
 public class ProductoDAO {
@@ -59,29 +58,6 @@ public class ProductoDAO {
         }
 
     }
-/*
-    public void select(){
-        try {
-            this.conn = newConnection();
-            Statement statement = conn.createStatement();
-            ResultSet resultSet = statement.executeQuery("select * from producto");
 
-            while(resultSet.next()){
-                System.out.println(resultSet.getString("id_producto"));
-                System.out.println(resultSet.getString("nombre"));
-                System.out.println(resultSet.getString("detalle"));
-                System.out.println(resultSet.getString("cantidad"));
-            }
-
-        } catch (SQLException ex) {
-
-            System.out.println("Error en SELECT");
-            System.out.println(ex.getErrorCode());
-            System.out.println(ex.getMessage());
-            System.out.println(ex.getCause());
-
-        }
-    }
-*/
 }
 

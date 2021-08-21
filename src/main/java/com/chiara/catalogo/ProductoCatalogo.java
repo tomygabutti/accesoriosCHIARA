@@ -1,8 +1,6 @@
 package com.chiara.catalogo;
 import com.chiara.*;
-
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class ProductoCatalogo {
     private Producto producto;

@@ -1,7 +1,5 @@
 package com.chiara.db;
-import com.chiara.*;
 import java.sql.*;
-import java.util.Date;
 
 public class ClienteDAO {
     Connection conn;
@@ -84,7 +82,7 @@ public class ClienteDAO {
 
         } catch (SQLException ex) {
 
-            System.out.println("Error en Delete");
+            System.out.println("Error en SELECT");
 
         }
 

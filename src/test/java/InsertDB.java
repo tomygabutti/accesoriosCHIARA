@@ -85,7 +85,7 @@ public class InsertDB {
 
     @Test
     public void insertarBD(){
-        paquete.deleteConAccesoriosYProducto();
+        // paquete.del();
 
     }
 

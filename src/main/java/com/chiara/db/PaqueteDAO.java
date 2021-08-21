@@ -1,7 +1,5 @@
 package com.chiara.db;
-import com.chiara.*;
 import java.sql.*;
-import java.util.Date;
 
 public class PaqueteDAO {
     Connection conn;

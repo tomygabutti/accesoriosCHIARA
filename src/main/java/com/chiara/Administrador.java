@@ -1,10 +1,7 @@
 package com.chiara;
-
 import com.chiara.catalogo.Catalogo;
 import com.chiara.catalogo.ProductoCatalogo;
 import com.chiara.db.AdministradorDAO;
-import com.chiara.db.ClienteDAO;
-
 import java.util.List;
 import java.util.stream.Collectors;
 

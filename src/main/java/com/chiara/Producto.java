@@ -9,7 +9,6 @@ public abstract class Producto {
 
     public abstract double calcularPrecio();
 
-
     public int getId_producto() {
         return id_producto;
     }
@@ -42,7 +41,6 @@ public abstract class Producto {
         this.cantidad = cantidad;
     }
 
-    // Base de Datos
     public void insert(){
         ProductoDAO prodDao = new ProductoDAO();
         prodDao.insert(this.id_producto,this.nombre,this.detalle,this.cantidad);
