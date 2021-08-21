@@ -6,10 +6,11 @@ public class DbApp {
     public static void main (String[] args){
         int idProd = 1184;
         int cantProd = 1;
+        String nombre;
         String nombreProd = "Pulsera roja";
         String detalleProd = "Pulsera roja";
         String consulta = "INSERT INTO producto (id_producto, nombre, detalle, cantidad) "
-                +"VALUES ('" + idProd + "', '" + nombreProd + "', '" + detalleProd + "', '" + cantProd + "')";
+               +"VALUES ('" + idProd + "', '" + nombreProd + "', '" + detalleProd + "', '" + cantProd + "')";
 
         try{
 

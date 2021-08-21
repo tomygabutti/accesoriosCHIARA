@@ -1,15 +1,18 @@
 package com.chiara;
 
+import com.chiara.db.AdministradorDAO;
+import com.chiara.db.CompraDAO;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class Compra {
-    private String codigoCompra;
+    private int codigoCompra;
     private List<Producto> productos = new ArrayList<>();
     private Cliente cliente;
-    private Date fechaCompra;
+    private String fechaCompra;
 
     public List<Producto> getProductos() {
         return productos;
@@ -26,6 +29,23 @@ public class Compra {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
+
+    public int getCodigoCompra() {
+        return codigoCompra;
+    }
+
+    public void setCodigoCompra(int codigoCompra) {
+        this.codigoCompra = codigoCompra;
+    }
+
+    public String getFechaCompra() {
+        return fechaCompra;
+    }
+
+    public void setFechaCompra(String fechaCompra) {
+        this.fechaCompra = fechaCompra;
+    }
+
 
     public Double totalCompra(){
         return productos.stream().mapToDouble(Producto::calcularPrecio).sum();
@@ -48,22 +68,23 @@ public class Compra {
             String compraRechazada = "Compra rechazada";
             cliente.getFormaDeNotificacion().comprobanteCompra(compraRechazada,numeroCliente);
         }
-
     }
 
-    public String getCodigoCompra() {
-        return codigoCompra;
+    public void insert(){
+        CompraDAO compraDAO = new CompraDAO();
+        for (Producto prod : productos){
+             compraDAO.insert(this.codigoCompra,this.cliente.getId_cliente(),prod.getCodigo(),this.fechaCompra);
+        }
     }
 
-    public void setCodigoCompra(String codigoCompra) {
-        this.codigoCompra = codigoCompra;
+    public void delete(){
+        CompraDAO compraDAO = new CompraDAO();
+        compraDAO.delete(this.codigoCompra);
     }
 
-    public Date getFechaCompra() {
-        return fechaCompra;
+    public void select(){
+        CompraDAO compraDAO = new CompraDAO();
+        compraDAO.select(this.codigoCompra);
     }
 
-    public void setFechaCompra(Date fechaCompra) {
-        this.fechaCompra = fechaCompra;
-    }
 }

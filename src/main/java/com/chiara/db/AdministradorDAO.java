@@ -3,7 +3,7 @@ import com.chiara.*;
 import java.sql.*;
 import java.util.Date;
 
-public class ClienteDAO {
+public class AdministradorDAO {
     Connection conn;
 
     public Connection newConnection() {
@@ -19,9 +19,9 @@ public class ClienteDAO {
     }
 
 
-    public void insert(int idCliente,String nombreUsuario,String contrasenia,String nombre,String apellido,String telefono,String fechaNac) {
-        String consulta = "INSERT INTO cliente (id_cliente,nombre_usuario,contrasenia,nombre,apellido,telefono,fecha_nacimiento) "
-                + "VALUES ('" + idCliente + "','" + nombreUsuario + "','" + contrasenia + "', '" + nombre + "', '" + apellido + "', '" + telefono + "', '" + fechaNac + "')";
+    public void insert(int idAdmin,String nombreUsuario,String contrasenia) {
+        String consulta = "INSERT INTO administrador (id_administrador,nombre_usuario,contrasenia) "
+                + "VALUES ('" + idAdmin + "','" + nombreUsuario + "','" + contrasenia + "')";
 
         try {
             this.conn = newConnection();
@@ -40,8 +40,8 @@ public class ClienteDAO {
     }
 
 
-    public boolean delete(int idCliente) {
-        String consulta = "DELETE FROM cliente WHERE id_cliente = " + idCliente + ";";
+    public boolean delete(int idAdmin) {
+        String consulta = "DELETE FROM administrador WHERE id_administrador = " + idAdmin + ";";
 
         try {
 
@@ -60,8 +60,8 @@ public class ClienteDAO {
 
     }
 
-    public void select(int idCliente) {
-        String consulta = "select * FROM cliente WHERE id_cliente = " + idCliente + ";";
+    public void select(int idAdmin) {
+        String consulta = "select * FROM administrador WHERE id_administrador = " + idAdmin + ";";
 
         try {
 
@@ -72,13 +72,10 @@ public class ClienteDAO {
             ResultSet resultSet = statement.executeQuery(consulta);
 
             while(resultSet.next()){
-                System.out.println(resultSet.getString("id_cliente"));
+                System.out.println(resultSet.getString("id_administrador"));
                 System.out.println(resultSet.getString("nombre_usuario"));
                 System.out.println(resultSet.getString("contrasenia"));
-                System.out.println(resultSet.getString("nombre"));
-                System.out.println(resultSet.getString("apellido"));
-                System.out.println(resultSet.getString("telefono"));
-                System.out.println(resultSet.getString("fecha_nacimiento"));
+
             }
 
 

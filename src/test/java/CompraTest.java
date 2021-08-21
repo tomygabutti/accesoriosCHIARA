@@ -18,7 +18,7 @@ public class CompraTest {
     private List<Producto> productosTest;
     private Double total;
     private Administrador user;
-    private Stock stock;
+  //  private Stock stock;
 
 
     @Before
@@ -33,10 +33,10 @@ public class CompraTest {
         this.productosTest = new ArrayList<>();
         this.total = 1.2345e300d;
         this.user = new Administrador();
-        this.stock = Stock.getInstance();
+      //  this.stock = Stock.getInstance();
 
-        user.setStock(this.stock);
-        user.setPrecioEstadistica(50d);
+      //  user.setStock(this.stock);
+       // user.setPrecioEstadistica(50d);
 
         prodSimple1.setPrecioUnitario(40);
         prodSimple2.setPrecioUnitario(70);
@@ -72,7 +72,7 @@ public class CompraTest {
         productosTest.add(prodSimple2);
         productosTest.add(prodSimple3);
 
-        stock.setProductos(productos);
+    //    stock.setProductos(productos);
 
     }
 

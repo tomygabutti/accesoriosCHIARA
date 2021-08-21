@@ -34,12 +34,7 @@ public class ProductoCatalogo {
         this.reviews = reviews;
     }
 
-    public int calicacionDeUnaEstrella(){
-       if(((reviews.stream().filter(r -> r.getCalificacion() == 1).collect(Collectors.toList())).size())==1){
-            return 1;
-        }else{
-           return 0;
-       }
-
+    public boolean calicacionDeUnaEstrella(){
+        return reviews.stream().anyMatch(review -> review.getCalificacion() == 1);
     }
 }

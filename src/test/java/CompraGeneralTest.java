@@ -87,8 +87,8 @@ public class CompraGeneralTest {
         this.compraTest = new Compra();
 
         compraTest.setCliente(cliente);
-        compraTest.setCodigoCompra("xdlol45");
-        compraTest.setFechaCompra(new Date());
+       // compraTest.setCodigoCompra("xdlol45");
+        compraTest.setFechaCompra("");
         compraTest.setProductos(listaCarrito);
 
 

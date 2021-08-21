@@ -3,7 +3,7 @@ import com.chiara.*;
 import java.sql.*;
 import java.util.Date;
 
-public class UsuarioDAO {
+public class CompraDAO {
     Connection conn;
 
     public Connection newConnection() {
@@ -19,9 +19,9 @@ public class UsuarioDAO {
     }
 
 
-    public void insert(String nombreUsuario, String contrasenia, String nombre, String apellido, String fechaNac, String tipoDoc, String nroDoc) {
-        String consulta = "INSERT INTO usuario (nombre_usuario,contrasenia,nombre,apellido,fecha_nacimiento,tipo_documento,nro_documento) "
-                + "VALUES ('" + nombreUsuario + "','" + contrasenia + "', '" + nombre + "', '" + apellido + "', '" + fechaNac + "', '" + tipoDoc + "','" + nroDoc + "')";
+    public void insert(int idCompra,int idCliente,int idProd,String fecha) {
+        String consulta = "INSERT INTO compra (id_compra,id_cliente,id_producto,fecha_compra) "
+                + "VALUES ('" + idCompra + "','" + idCliente + "','" + idProd + "','" + fecha + "')";
 
         try {
             this.conn = newConnection();
@@ -40,8 +40,8 @@ public class UsuarioDAO {
     }
 
 
-    public boolean delete(int idUsuario) {
-        String consulta = "DELETE FROM usuario WHERE id_usuario = " + idUsuario + ";";
+    public boolean delete(int idCompra) {
+        String consulta = "DELETE FROM compra WHERE id_compra = " + idCompra + ";";
 
         try {
 
@@ -59,4 +59,33 @@ public class UsuarioDAO {
         }
 
     }
+
+    public void select(int idCompra) {
+        String consulta = "select * FROM compra WHERE id_compra = " + idCompra + ";";
+
+        try {
+
+            this.conn = newConnection();
+
+            Statement statement = conn.createStatement();
+
+            ResultSet resultSet = statement.executeQuery(consulta);
+
+            while(resultSet.next()){
+                System.out.println(resultSet.getString("id_compra"));
+                System.out.println(resultSet.getString("id_cliente"));
+                System.out.println(resultSet.getString("id_producto"));
+                System.out.println(resultSet.getString("fecha_compra"));
+
+            }
+
+
+        } catch (SQLException ex) {
+
+            System.out.println("Error en select");
+
+        }
+
+    }
+
 }
