@@ -52,14 +52,14 @@ public class CompraGeneralTest {
         productos.add(prodSimple2);
         productos.add(prodSimple3);
 
-        paquete.setComponentes(productos);
+        //paquete.setComponentes(productos);
         paquete.setNombre("Pack Aros");
 
         List<Producto> productos2 = new ArrayList<>();
         productos2.add(prodSimple1);
         productos2.add(prodSimple3);
 
-        paquete2.setComponentes(productos2);
+        //paquete2.setComponentes(productos2);
         paquete2.setNombre("Pack pulseras");
 
         List<Producto> listaCarrito = new ArrayList<>();

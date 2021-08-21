@@ -1,10 +1,8 @@
 package com.chiara;
 
-import com.chiara.db.AdministradorDAO;
 import com.chiara.db.CompraDAO;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -73,7 +71,7 @@ public class Compra {
     public void insert(){
         CompraDAO compraDAO = new CompraDAO();
         for (Producto prod : productos){
-             compraDAO.insert(this.codigoCompra,this.cliente.getId_cliente(),prod.getCodigo(),this.fechaCompra);
+             compraDAO.insert(this.codigoCompra,this.cliente.getId_cliente(),prod.getId_producto(),this.fechaCompra);
         }
     }
 

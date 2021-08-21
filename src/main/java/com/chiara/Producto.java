@@ -2,7 +2,7 @@ package com.chiara;
 import com.chiara.db.*;
 
 public abstract class Producto {
-    private int codigo;
+    private int id_producto;
     private String nombre;
     private String detalle;
     private int cantidad;
@@ -10,12 +10,12 @@ public abstract class Producto {
     public abstract double calcularPrecio();
 
 
-    public int getCodigo() {
-        return codigo;
+    public int getId_producto() {
+        return id_producto;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setId_producto(int id_producto) {
+        this.id_producto = id_producto;
     }
 
     public String getNombre() {
@@ -45,12 +45,12 @@ public abstract class Producto {
     // Base de Datos
     public void insert(){
         ProductoDAO prodDao = new ProductoDAO();
-        prodDao.insert(this.codigo,this.nombre,this.detalle,this.cantidad);
+        prodDao.insert(this.id_producto,this.nombre,this.detalle,this.cantidad);
     }
 
     public void delete(){
         ProductoDAO prodDao = new ProductoDAO();
-        prodDao.delete(this.codigo);
+        prodDao.delete(this.id_producto);
     }
 
 }

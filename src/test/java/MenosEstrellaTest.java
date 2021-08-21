@@ -1,13 +1,8 @@
 import com.chiara.*;
 import com.chiara.catalogo.*;
-import com.chiara.estados.Estado;
-import com.chiara.estados.Rojo;
-import com.chiara.estados.Verde;
 import org.junit.Before;
 import org.junit.Test;
-
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class MenosEstrellaTest {

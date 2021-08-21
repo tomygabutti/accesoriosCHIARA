@@ -1,11 +1,8 @@
 import com.chiara.*;
-
 import com.chiara.db.ProductoDAO;
 import org.junit.Before;
 import org.junit.Test;
-
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class InsertDB {
@@ -15,19 +12,46 @@ public class InsertDB {
     private Cliente cliente;
     private Administrador admin;
     private Compra compra;
-   // private Stock stock;
+    private Accesorio accesorio;
+    private Accesorio accesorio2;
+    private Paquete paquete;
 
 
     @Before
     public void init(){
+        this.accesorio = new Accesorio();
+        accesorio.setId_accesorio(2500);
+        accesorio.setPrecioUnitario(1200d);
+        accesorio.setId_producto(3000);
+        accesorio.setNombre("Cadenita Oro");
+        accesorio.setDetalle("Oro");
+        accesorio.setCantidad(1);
+
+        this.accesorio2 = new Accesorio();
+        accesorio2.setId_accesorio(2501);
+        accesorio2.setPrecioUnitario(500d);
+        accesorio2.setId_producto(3001);
+        accesorio2.setNombre("Pulsera tela");
+        accesorio2.setDetalle("tela colorida");
+        accesorio2.setCantidad(1);
+
+        List<Accesorio> accesorios = new ArrayList<>();
+        accesorios.add(accesorio);
+        accesorios.add(accesorio2);
+
+        this.paquete = new Paquete();
+        paquete.setId_paquete(1);
+        paquete.setComponentes(accesorios);
+
         this.producto = new Accesorio();
-        producto.setCodigo(1165);
+        producto.setId_producto(1165);
         producto.setNombre("caterita");
         producto.setDetalle("negra");
         producto.setCantidad(1);
 
+
         this.producto2 = new Accesorio();
-        producto2.setCodigo(1171);
+        producto2.setId_producto(1171);
         producto.setNombre("colita pelo");
         producto.setDetalle("roja");
         producto.setCantidad(1);
@@ -61,7 +85,7 @@ public class InsertDB {
 
     @Test
     public void insertarBD(){
-        compra.delete();
+        paquete.deleteConAccesoriosYProducto();
 
     }
 

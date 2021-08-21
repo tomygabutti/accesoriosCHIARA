@@ -23,6 +23,7 @@ public class CompraTest {
 
     @Before
     public void init(){
+        /*
         this.compra = new Compra();
         this.prodSimple1 = new Accesorio();
         this.prodSimple2 = new Accesorio();
@@ -54,7 +55,7 @@ public class CompraTest {
         productos.add(prodSimple3);
         productos.add(prodSimple4);
 
-        paquete.setComponentes(productos);
+        //paquete.setComponentes(productos);
 
         List<Producto> productos2 = new ArrayList<>();
         productos2.add(prodSimple1);
@@ -74,11 +75,13 @@ public class CompraTest {
 
     //    stock.setProductos(productos);
 
+         */
+
     }
 
     @Test
     public void obtenerPrecioProducto(){
-
+/*
       System.out.println(this.paquete.calcularPrecio());
       System.out.println(this.paquete2.calcularPrecio());
       System.out.println(this.compra.totalCompra());
@@ -86,6 +89,8 @@ public class CompraTest {
       String productosToString2 = this.productosTest.stream().map(producto -> producto.getNombre()+" "+producto.calcularPrecio()).collect(Collectors.joining(", "));
       String testing = this.total.toString();
       System.out.println(testing);
+
+ */
 
     }
 
