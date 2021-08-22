@@ -6,11 +6,11 @@ public class Verde implements Estado {
     @Override
     public int comprar(double precioCompra, TarjetaDebito tarjeta) {
         double saldoActual = tarjeta.getSaldo() - precioCompra;
-        if (saldoActual > 15000) {
+        if (saldoActual > 5000) {
             tarjeta.setSaldo(saldoActual);
             return 1;
         } else {
-            if (saldoActual < 15000 && saldoActual > 50) {
+            if (saldoActual < 5000 && saldoActual > 50) {
                 tarjeta.setEstado(new Rojo());
                 tarjeta.setSaldo(saldoActual);
                 return 1;
