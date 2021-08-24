@@ -34,7 +34,7 @@ public class Accesorio extends Producto {
 
     public void insert(){
         AccesorioDAO accesorioDAO = new AccesorioDAO();
-        accesorioDAO.insert(this.id_accesorio,getNombre(),getDetalle(),calcularPrecio(),this.id_paquete);
+        accesorioDAO.insert(this.id_accesorio,calcularPrecio(),this.getId_producto(),this.id_paquete);
     }
 
     public void delete(){

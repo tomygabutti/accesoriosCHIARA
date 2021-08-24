@@ -40,30 +40,14 @@ public class Paquete extends Producto{
 
     public void insert(){
         PaqueteDAO paqueteDAO = new PaqueteDAO();
-        AccesorioDAO accesorioDAO = new AccesorioDAO();
-        for (Producto prod : componentes){
-            if(prod instanceof Paquete ){
-                paqueteDAO.insert(((Paquete) prod).getId_paquete(), prod.getNombre(), prod.getDetalle(),prod.calcularPrecio(),getId_paquete_padre());
-        }else{
-                if(prod instanceof Accesorio){
-                    accesorioDAO.insert(((Accesorio) prod).getId_accesorio(), prod.getNombre(), prod.getDetalle(),prod.calcularPrecio(),((Accesorio) prod).getId_paquete());
-                }
-            }
-        }
-}
-/*
-    public void delete(){
-        PaqueteDAO paqueteDAO = new PaqueteDAO();
-        AccesorioDAO accesorioDAO = new AccesorioDAO();
-        for (Producto prod : componentes){
-            if(prod instanceof Paquete ){
-                paqueteDAO.delete(((Paquete) prod).getId_paquete());
-            }else{
-                if(prod instanceof Accesorio){
-                    accesorioDAO.insert(((Accesorio) prod).getId_accesorio(), prod.getNombre(), prod.getDetalle(),prod.calcularPrecio(),((Accesorio) prod).getId_paquete());
-                }
-            }
+        for(Producto prod : componentes){
+            paqueteDAO.insert(this.id_paquete,prod.getId_producto(),this.getId_paquete_padre());
         }
     }
-*/
+
+    public void delete(){
+        PaqueteDAO paqueteDAO = new PaqueteDAO();
+        paqueteDAO.delete(this.id_paquete);
+    }
+
 }

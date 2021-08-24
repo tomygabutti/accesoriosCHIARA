@@ -1,19 +1,25 @@
+CREATE TABLE producto(
+                         id_producto int PRIMARY KEY,
+                         nombre varchar(60),
+                         detalle varchar(80),
+                         cantidad int
+)ENGINE=INNODB;
+
 CREATE TABLE paquete(
                         id_paquete int PRIMARY KEY,
-                        nombre varchar(60),
-                        detalle varchar(80),
-                        precio_unitario double,
+                        id_producto int,
                         id_paquete_padre int,
+                        constraint fk_producto_2	foreign key (id_producto) references producto(id_producto),
                         constraint fk_paquete_2	foreign key (id_paquete_padre) references paquete(id_paquete)
 )ENGINE=INNODB;
 
 CREATE TABLE accesorio(
                           id_accesorio int PRIMARY KEY,
-                          nombre varchar(60),
-                          detalle varchar(80),
                           precio_unitario double,
+                          id_producto int,
                           id_paquete int,
-                          constraint fk_paquete_3	foreign key (id_paquete) references paquete(id_paquete)
+                          constraint fk_paquete_3	foreign key (id_paquete) references paquete(id_paquete),
+                          constraint fk_producto_1	foreign key (id_producto) references producto(id_producto)
 )ENGINE=INNODB;
 
 CREATE TABLE cliente(
@@ -35,9 +41,7 @@ create table administrador(
 CREATE TABLE compra(
                        id_compra int,
                        id_cliente int,
-                       id_accesorio int,
-                       id_paquete int,
+                       id_producto int,
                        fecha_compra varchar(30),
-                       constraint fk_acce_1 foreign key (id_accesorio) references accesorio(id_accesorio),
-                       constraint fk_paque_1	foreign key (id_paquete) references paquete(id_paquete)
+                       constraint fk_producto_3	foreign key (id_producto) references producto(id_producto)
 )ENGINE=INNODB;

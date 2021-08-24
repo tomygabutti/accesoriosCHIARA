@@ -17,9 +17,9 @@ public class AccesorioDAO {
     }
 
 
-    public void insert(int idAcce,String nombre,String detalle,double precio,int idPaquete) {
-        String consulta = "INSERT INTO accesorio (id_accesorio,nombre,detalle,precio_unitario,id_paquete) "
-                + "VALUES ('" + idAcce + "','" + nombre + "','" + detalle + "','" + precio + "','" + idPaquete + "')";
+    public void insert(int idAcce,double precio,int idProd,int idPaquete) {
+        String consulta = "INSERT INTO accesorio (id_accesorio,precio_unitario,id_producto,id_paquete) "
+                + "VALUES ('" + idAcce + "','" + precio + "','" + idProd + "','" + idPaquete + "')";
 
         try {
             this.conn = newConnection();

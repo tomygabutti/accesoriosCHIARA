@@ -1,7 +1,7 @@
 package com.chiara.db;
 import java.sql.*;
 
-public class PaqueteDAO {
+public class ProductoDAO {
     Connection conn;
 
     public Connection newConnection() {
@@ -17,9 +17,10 @@ public class PaqueteDAO {
     }
 
 
-    public void insert(int idPaquete,int idProd,int idPaquetePadre) {
-        String consulta = "INSERT INTO paquete (id_paquete,id_producto,id_paquete_padre) "
-                + "VALUES ('" + idPaquete + "','" + idProd + "','" + idPaquetePadre + "')";
+
+    public void insert(int idProd,String nombreProd, String detalleProd, int cant) {
+        String consulta = "INSERT INTO producto (id_producto, nombre, detalle, cantidad) "
+                +"VALUES ('" + idProd + "', '" + nombreProd + "', '" + detalleProd + "', '" + cant + "')";
 
         try {
             this.conn = newConnection();
@@ -38,8 +39,8 @@ public class PaqueteDAO {
     }
 
 
-    public boolean delete(int codigo) {
-        String consulta = "DELETE FROM paquete WHERE cod_paquete = " + codigo + ";";
+    public boolean delete(int idProducto) {
+        String consulta = "DELETE FROM producto WHERE id_producto = " + idProducto + ";";
 
         try {
 
@@ -54,33 +55,6 @@ public class PaqueteDAO {
 
             System.out.println("Error en Delete");
             return false;
-        }
-
-    }
-
-    public void select(int codigo) {
-        String consulta = "select * FROM paquete WHERE cod_paquete = " + codigo + ";";
-
-        try {
-
-            this.conn = newConnection();
-
-            Statement statement = conn.createStatement();
-
-            ResultSet resultSet = statement.executeQuery(consulta);
-
-            while(resultSet.next()){
-                System.out.println(resultSet.getString("cod_paquete"));
-                System.out.println(resultSet.getString("id_producto"));
-                System.out.println(resultSet.getString("id_accesorio"));
-
-            }
-
-
-        } catch (SQLException ex) {
-
-            System.out.println("Error en SELECT");
-
         }
 
     }

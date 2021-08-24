@@ -32,5 +32,4 @@ public abstract class Producto {
         this.detalle = detalle;
     }
 
-
 }
