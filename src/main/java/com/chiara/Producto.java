@@ -5,7 +5,6 @@ public abstract class Producto {
     private int id_producto;
     private String nombre;
     private String detalle;
-    private int cantidad;
 
     public abstract double calcularPrecio();
 
@@ -33,22 +32,5 @@ public abstract class Producto {
         this.detalle = detalle;
     }
 
-    public int getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
-
-    public void insert(){
-        ProductoDAO prodDao = new ProductoDAO();
-        prodDao.insert(this.id_producto,this.nombre,this.detalle,this.cantidad);
-    }
-
-    public void delete(){
-        ProductoDAO prodDao = new ProductoDAO();
-        prodDao.delete(this.id_producto);
-    }
 
 }

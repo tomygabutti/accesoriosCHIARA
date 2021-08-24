@@ -17,9 +17,9 @@ public class PaqueteDAO {
     }
 
 
-    public void insert(int codigo,int idProd,int idAcce) {
-        String consulta = "INSERT INTO paquete (cod_paquete,id_producto,id_accesorio) "
-                + "VALUES ('" + codigo + "','" + idProd + "','" + idAcce + "')";
+    public void insert(int idPaquete,String nombre,String detalle,double precio,int idPaquetePadre) {
+        String consulta = "INSERT INTO paquete (id_paquete,nombre,detalle,precio_unitario,id_paquete_padre) "
+                + "VALUES ('" + idPaquete + "','" + detalle + "','" + detalle + "','" + precio + "','" + idPaquetePadre + "')";
 
         try {
             this.conn = newConnection();

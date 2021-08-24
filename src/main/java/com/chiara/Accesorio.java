@@ -1,10 +1,10 @@
 package com.chiara;
 import com.chiara.db.AccesorioDAO;
-import com.chiara.db.ProductoDAO;
 
 public class Accesorio extends Producto {
     private int id_accesorio;
     private double precioUnitario;
+    private int id_paquete;
 
     public void setPrecioUnitario(double precioUnitario) {
         this.precioUnitario = precioUnitario;
@@ -24,28 +24,22 @@ public class Accesorio extends Producto {
         this.id_accesorio = id_accesorio;
     }
 
-    public void insert(){
-        AccesorioDAO accesorioDAO = new AccesorioDAO();
-        accesorioDAO.insert(this.id_accesorio,this.precioUnitario,getId_producto());
+    public int getId_paquete() {
+        return id_paquete;
     }
 
-    public void insertConProducto(){
+    public void setId_paquete(int id_paquete) {
+        this.id_paquete = id_paquete;
+    }
+
+    public void insert(){
         AccesorioDAO accesorioDAO = new AccesorioDAO();
-        ProductoDAO productoDAO = new ProductoDAO();
-        productoDAO.insert(getId_producto(),getNombre(),getDetalle(),getCantidad());
-        accesorioDAO.insert(this.id_accesorio,this.precioUnitario,getId_producto());
+        accesorioDAO.insert(this.id_accesorio,getNombre(),getDetalle(),calcularPrecio(),this.id_paquete);
     }
 
     public void delete(){
         AccesorioDAO accesorioDAO = new AccesorioDAO();
         accesorioDAO.delete(this.id_accesorio);
-    }
-
-    public void deleteConProducto(){
-        AccesorioDAO accesorioDAO = new AccesorioDAO();
-        ProductoDAO productoDAO = new ProductoDAO();
-        accesorioDAO.delete(this.id_accesorio);
-        productoDAO.delete(getId_producto());
     }
 
     public void select(){
